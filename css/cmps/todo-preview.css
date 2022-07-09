@@ -3,3 +3,8 @@
   font-style: italic;
   text-decoration: line-through;
 }
+
+.todo-preview .tools {
+  width: 8rem;
+  justify-content: space-between;
+}

@@ -1,6 +1,6 @@
 export default {
   template: `
-    <section class="todo-details">
+    <section class="todo-details flex flex-column align-center justify-center">
         <p>{{todo.txt}}</p>
         <p>{{ status }}</p>
     </section>

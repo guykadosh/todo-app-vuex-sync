@@ -33,6 +33,10 @@ function _login() {
       color: '#ffffff',
       bgColor: '#0b7285',
     },
-    activities: [{ txt: 'Added a Todo', at: 1523873242735 }],
+    activities: [
+      { txt: 'Added a new Todo', at: 1523873242735 },
+      { txt: 'Added a new Todo', at: 1657354690272 },
+      { txt: 'Updated a Todo', at: 1657354745868 },
+    ],
   })
 }

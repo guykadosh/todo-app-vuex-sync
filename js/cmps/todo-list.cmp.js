@@ -3,7 +3,7 @@ export default {
   props: ['todos'],
   template: `
       <section class="todo-list">
-        <router-link to="/todo/edit">Add</router-link>
+        <router-link class="btn btn-add" to="/todo/edit">Add</router-link>
         <ul class="clean-list">
           <li v-for="todo in todos" >
               <todo-preview 

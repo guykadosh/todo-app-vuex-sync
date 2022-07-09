@@ -4,14 +4,20 @@ export default {
       <section class="todo-preview flex space-between">
           <p @click="$emit('toggled')"
               :class="done">{{ todo.txt }}</p>
-          <div>
-            <button @click="$emit('removed')">x</button>
+          <div class="tools flex">
+            <button @click="$emit('removed')" class="btn">
+              <span>x</span>
+            </button>
             <router-link 
-            :to="'/todo/edit/' + todo._id">
-                  Edit</router-link>
+              :to="'/todo/edit/' + todo._id"
+              class="btn">
+              <span>Edit</span>
+            </router-link>
             <router-link 
-            :to="'/todo/details/' + todo._id">
-                  Details</router-link>
+              :to="'/todo/details/' + todo._id"
+              class="btn">
+              <span>Details</span>
+            </router-link>
           </div>
       </section>
     `,

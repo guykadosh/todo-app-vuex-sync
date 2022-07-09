@@ -4,15 +4,16 @@ import { userService } from '../services/user.service.js'
 
 export default {
   template: `
-    <section v-if="todo" class="todo-edit">
-      <form @submit.prevent="saveTodo">
-        <input class="input" v-model="todo.txt" type="text">
+    <section v-if="todo" class="todo-edit flex justify-center align-center">
+      <form @submit.prevent="saveTodo"
+            class="flex space-between align-center">
         <input v-model="todo.isDone" type="checkbox">
+        <input class="input" v-model="todo.txt" type="text">
         <!-- <label class="cl-checkbox">
             <input type="checkbox"  v-model="todo.isDone">
             <span></span>
         </label> -->
-        <button>Save</button>
+        <button class="btn">Save</button>
       </form>
     </section>
 `,

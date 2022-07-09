@@ -64,6 +64,7 @@ function _createTodos() {
     todos = [
       _createTodo('Recover from sprint 3'),
       _createTodo('Own Todos app once and for all'),
+      _createTodo('Wait for a async version'),
     ]
     storageService.store(KEY, todos)
   }

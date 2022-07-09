@@ -4,7 +4,7 @@ export default {
         <h2>Todos</h2>
         <div class=""> 
           <p>Hello, {{ fullName }}</p>
-          <router-link to="/user">Profile</router-link>
+          <router-link class="btn" to="/user">Profile</router-link>
           <div class="progress-bar">
             <span :style="{ width: donePct + '%' }">{{donePct}}%</span>
           </div>
