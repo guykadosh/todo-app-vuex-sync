@@ -1,0 +1,10 @@
+.filter-btns {
+  border-bottom: 2px solid #343a40;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.selected {
+  border: 1px solid #e7f5ff;
+  border-bottom: none;
+}
