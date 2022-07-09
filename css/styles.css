@@ -6,6 +6,8 @@
 
 /* CMPS  */
 @import 'cmps/app.css';
-@import 'cmps/filter.css';
+@import 'cmps/header.css';
 @import 'cmps/progress-bar.css';
+@import 'cmps/filter.css';
+@import 'cmps/todo-list.css';
 @import 'cmps/todo-preview.css';

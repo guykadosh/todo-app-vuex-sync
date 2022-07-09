@@ -4,7 +4,14 @@ const USER_KEY = 'loggedInUser'
 
 export const userService = {
   getLoggedinUser,
+  addActivity,
   save,
+}
+
+function addActivity(activity) {
+  const user = storageService.load(USER_KEY)
+  user.activities.push(activity)
+  storageService.store(USER_KEY, user)
 }
 
 function save(user) {

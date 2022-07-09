@@ -21,17 +21,29 @@ export const store = Vuex.createStore({
     },
     saveTodo(state, { todo }) {
       const newTodo = todoService.save(todo)
+      const activty = { txt: '', at: Date.now() }
 
       const idx = state.todos.findIndex(
         currTodo => newTodo._id === currTodo._id
       )
-      if (idx === -1) state.todos.push(todo)
-      else state.todos.splice(idx, 1, newTodo)
+      if (idx === -1) {
+        state.todos.push(todo)
+        activty.txt = 'Added a new todo'
+      } else {
+        state.todos.splice(idx, 1, newTodo)
+        activty.txt = `Updated todo ${newTodo._id}`
+      }
 
-      console.log(todo)
+      userService.addActivity(activty)
+      state.user.activities.push(activty)
     },
     removeTodo(state, { todoId }) {
+      const activty = { txt: 'Removed a todo', at: Date.now() }
+
+      userService.addActivity(activty)
       todoService.remove(todoId)
+
+      state.user.activities.push(activty)
       const idx = state.todos.findIndex(todo => todo._id === todoId)
       state.todos.splice(idx, 1)
     },
@@ -40,7 +52,9 @@ export const store = Vuex.createStore({
       state.filterBy.status = status
     },
     updateUser(state, { user }) {
-      // userService.save(user)
+      const activty = { txt: 'Updated perferences', at: Date.now() }
+      user.activities.push(activty)
+      userService.save(user)
       state.user = user
     },
   },
